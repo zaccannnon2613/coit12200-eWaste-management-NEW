@@ -7,7 +7,10 @@ package ewastemanagement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -29,8 +32,8 @@ public class CustomerModel {
         
          try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            //selectByName = connection.prepareStatement("");
-            //selectByMobile = connection.prepareStatement("");
+            selectByName = connection.prepareStatement("SELECT * FROM customer WHERE fName = ?");
+            selectByMobile = connection.prepareStatement("SELECT * FROM customer WHERE mobile = ?");
             insertNewCustomer = connection.prepareStatement("INSERT INTO customer"
             + "( fName, lName, mobile, email, strNo, strName, suburb, tipsCounter)"
             + "values (?,?,?,?,?,?,?,?)");
@@ -59,6 +62,75 @@ public class CustomerModel {
         }
         catch(SQLException e){
             e.printStackTrace();
+        }
+        return result;
+    }
+    
+    public List<Customer> getCustomerByName(String name){
+        List<Customer> result = null;
+        ResultSet rs = null;
+        
+        try{
+            selectByName.setString(1, name);
+            rs = selectByName.executeQuery();
+            result = new ArrayList<Customer>();
+            
+            while (rs.next()){
+                result.add(new Customer(rs.getInt("customerID"),
+                rs.getString("fName"),
+                rs.getString("lName"),
+                rs.getString("mobile"),
+                rs.getString("email"),
+                rs.getInt("strNo"),
+                rs.getString("strName"),
+                rs.getString("suburb"),
+                rs.getInt("tipsCounter")));
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                rs.close();
+            }
+            catch(SQLException ex){
+                ex.printStackTrace();
+            }
+        }
+        return result;
+    }
+    public List<Customer> getCustomerByMobile(String mobile){
+        List<Customer> result = null;
+        ResultSet rs = null;
+        
+        try{
+            selectByMobile.setString(1, mobile);
+            rs = selectByMobile.executeQuery();
+            result = new ArrayList<Customer>();
+            
+            while (rs.next()){
+                result.add(new Customer(rs.getInt("customerID"),
+                rs.getString("fName"),
+                rs.getString("lName"),
+                rs.getString("mobile"),
+                rs.getString("email"),
+                rs.getInt("strNo"),
+                rs.getString("strName"),
+                rs.getString("suburb"),
+                rs.getInt("tipsCounter")));
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        finally{
+            try{
+                rs.close();
+            }
+            catch(SQLException ex){
+                ex.printStackTrace();
+            }
         }
         return result;
     }
