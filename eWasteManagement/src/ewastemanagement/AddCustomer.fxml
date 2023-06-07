@@ -1,11 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ewastemanagement.AddCustomerController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="816.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="ewastemanagement.AddCustomerController">
+   <children>
+      <Label layoutX="286.0" layoutY="1.0" prefHeight="53.0" prefWidth="531.0" text="Add Customer" textAlignment="CENTER">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="105.0" text="First Name" />
+      <Label layoutX="148.0" layoutY="157.0" text="Last Name" />
+      <Label layoutX="261.0" layoutY="211.0" text="Street Name" />
+      <Label layoutX="131.0" layoutY="211.0" text="Str Number" />
+      <Label layoutX="458.0" layoutY="211.0" text="Suburb" />
+      <Label layoutX="148.0" layoutY="302.0" text="Mobile" />
+      <Label layoutX="148.0" layoutY="361.0" text="Email" />
+      <Label layoutX="294.0" layoutY="516.0" text="Developed by Highen Flint and Zac Cannon" />
+      <Button fx:id="btnSave" layoutX="607.0" layoutY="310.0" mnemonicParsing="false" onAction="#btnSaveListener" prefHeight="36.0" prefWidth="70.0" text="Save" />
+      <TextField fx:id="txtFirstName" layoutX="206.0" layoutY="101.0" />
+      <TextField fx:id="txtLastName" layoutX="206.0" layoutY="153.0" />
+      <TextField fx:id="txtStrNum" layoutX="127.0" layoutY="238.0" prefHeight="25.0" prefWidth="70.0" />
+      <TextField fx:id="txtStreetName" layoutX="220.0" layoutY="238.0" />
+      <TextField fx:id="txtSuburb" layoutX="403.0" layoutY="238.0" />
+      <TextField fx:id="txtMobile" layoutX="212.0" layoutY="298.0" />
+      <TextField fx:id="txtEmail" layoutX="212.0" layoutY="357.0" />
+      <Button fx:id="btnExit" layoutX="607.0" layoutY="404.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="36.0" prefWidth="70.0" text="Back" />
+   </children>
 </AnchorPane>
