@@ -1,11 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ewastemanagement.SearchController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="816.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="ewastemanagement.SearchController">
+   <children>
+      <Button fx:id="btnBack" layoutX="620.0" layoutY="421.0" mnemonicParsing="false" onAction="#btnBackListener" prefHeight="36.0" prefWidth="61.0" text="Back" />
+      <Label layoutX="273.0" layoutY="14.0" text="Customer Search">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="296.0" layoutY="503.0" text="Developed by Hughen Flint &amp; Zac Cannon" />
+      <Label layoutX="315.0" layoutY="67.0" text="Search by name, address or mobile" />
+      <TextField fx:id="txtFNameSearch" layoutX="222.0" layoutY="96.0" />
+      <TextField fx:id="txtStrNoSearch" layoutX="222.0" layoutY="137.0" prefHeight="25.0" prefWidth="61.0" />
+      <TextField fx:id="txtStrNameSearch" layoutX="371.0" layoutY="137.0" />
+      <Label layoutX="301.0" layoutY="141.0" text="Street Name" />
+      <Label layoutX="143.0" layoutY="141.0" text="Street Number" />
+      <Label layoutX="154.0" layoutY="100.0" text="First Name" />
+      <Label layoutX="164.0" layoutY="180.0" text="Mobile" />
+      <TextField fx:id="txtMobileSearch" layoutX="222.0" layoutY="176.0" />
+      <Button fx:id="btnSearch" layoutX="420.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnSearchListener" prefHeight="36.0" prefWidth="67.0" text="Search" />
+      <Label layoutX="150.0" layoutY="287.0" text="First Name" />
+      <TextField fx:id="txtFName" layoutX="209.0" layoutY="283.0" />
+      <Label layoutX="380.0" layoutY="287.0" text="Last Name" />
+      <TextField fx:id="txtLName" layoutX="446.0" layoutY="283.0" />
+      <Label layoutX="140.0" layoutY="327.0" text="Street Number" />
+      <TextField fx:id="txtStrNo" layoutX="222.0" layoutY="323.0" prefHeight="25.0" prefWidth="61.0" />
+      <Label layoutX="304.0" layoutY="327.0" text="Street Name" />
+      <TextField fx:id="txtStrName" layoutX="371.0" layoutY="323.0" />
+      <Label layoutX="537.0" layoutY="327.0" text="Suburb" />
+      <TextField fx:id="txtSuburb" layoutX="576.0" layoutY="323.0" />
+      <Label layoutX="165.0" layoutY="367.0" text="Mobile" />
+      <TextField fx:id="txtMobile" layoutX="212.0" layoutY="363.0" />
+      <Label layoutX="406.0" layoutY="367.0" text="Email" />
+      <TextField fx:id="txtEmail" layoutX="446.0" layoutY="363.0" />
+      <Label layoutX="239.0" layoutY="413.0" text="Trips Remaining" />
+      <TextField fx:id="txtTripRem" layoutX="328.0" layoutY="409.0" prefHeight="25.0" prefWidth="61.0" />
+   </children>
 </AnchorPane>
