@@ -33,12 +33,36 @@ public class BookingModel {
             selectByName = connection.prepareStatement("");
             selectByAddress = connection.prepareStatement("");
             selectByID = connection.prepareStatement("");
-            insertBooking = connection.prepareStatement("");
+            insertBooking = connection.prepareStatement("INSERT INTO bookings "
+            + "( bookingDate, timeOfPickup, requestDate, strNo, strName, suburb, notes, customerID, wasterID)"
+            + "values (?,?,?,?,?,?,?,?,?)");
             updateBooking = connection.prepareStatement("");
          }
          catch (SQLException e){
              e.printStackTrace();
              System.exit(1);
          }
+    }
+    public int addBooking(String bookingDate, String timeOfPickup, String requestDate,
+            int strNo, String streetName, String suburb, String notes, int customerID, int wasteID){
+        int result = 0;
+        
+        try{
+            insertBooking.setString(1, bookingDate);
+            insertBooking.setString(2, timeOfPickup);
+            insertBooking.setString(3, requestDate);
+            insertBooking.setInt(4, strNo);
+            insertBooking.setString(5, streetName);
+            insertBooking.setString(6, suburb);
+            insertBooking.setString(7, notes);
+            insertBooking.setInt(8, customerID);
+            insertBooking.setInt(9, wasteID);
+            
+            result = insertBooking.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return result;
     }
 }
