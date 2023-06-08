@@ -24,7 +24,7 @@ public class CustomerModel {
     
     private Connection connection = null;
     private PreparedStatement selectByName = null;
-    private PreparedStatement selectByMobile = null;
+    private PreparedStatement selectByAddress = null;
     private PreparedStatement insertNewCustomer = null;
     private PreparedStatement updateCustomer = null;
     
@@ -33,7 +33,7 @@ public class CustomerModel {
          try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             selectByName = connection.prepareStatement("SELECT * FROM customer WHERE fName = ?");
-            selectByMobile = connection.prepareStatement("SELECT * FROM customer WHERE mobile = ?");
+            selectByAddress = connection.prepareStatement("SELECT * FROM customer where strNo = ? and strName = ?");
             insertNewCustomer = connection.prepareStatement("INSERT INTO customer"
             + "( fName, lName, mobile, email, strNo, strName, suburb, tipsCounter)"
             + "values (?,?,?,?,?,?,?,?)");
@@ -100,13 +100,14 @@ public class CustomerModel {
         }
         return result;
     }
-    public List<Customer> getCustomerByMobile(String mobile){
+    public List<Customer> getCustomerByAddress(String strNo, String strName){
         List<Customer> result = null;
         ResultSet rs = null;
         
         try{
-            selectByMobile.setString(1, mobile);
-            rs = selectByMobile.executeQuery();
+            selectByAddress.setString(1, strNo);
+            selectByAddress.setString(2, strName);
+            rs = selectByAddress.executeQuery();
             result = new ArrayList<Customer>();
             
             while (rs.next()){
