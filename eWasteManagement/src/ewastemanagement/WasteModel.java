@@ -26,11 +26,30 @@ public class WasteModel {
         
         try{
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            insertWaste = connection.prepareStatement("");
+            insertWaste = connection.prepareStatement("INSERT INTO wastedetails"
+                    + "( wasteType, itemDetails, itemQuantity, customerID)"
+                    + "values (?,?,?,?)");
         }
         catch(SQLException e){
         e.printStackTrace();
         System.exit(1);
         }
+    }
+    public int addWaste(String wasteType, String itemDetails, String itemQuantity, int customerID){
+        int result = 0;
+        
+        try{
+            insertWaste.setString(1, wasteType);
+            insertWaste.setString(2, itemDetails);
+            insertWaste.setString(3, itemQuantity);
+            insertWaste.setInt(4, customerID);
+            
+            
+            result = insertWaste.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return result;
     }
 }

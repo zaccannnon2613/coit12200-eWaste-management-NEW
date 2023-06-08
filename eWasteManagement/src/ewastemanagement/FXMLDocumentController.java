@@ -105,6 +105,32 @@ public class FXMLDocumentController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void btnSearchBooking(ActionEvent event) {
+        //goes back to the home page
+        try {
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();//node is used to keep the window in the same place, can also alter height and width
+            root = FXMLLoader.load(getClass().getResource("SearchBooking.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void btnAddWaste(ActionEvent event) {
+        //goes back to the home page
+        try {
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();//node is used to keep the window in the same place, can also alter height and width
+            root = FXMLLoader.load(getClass().getResource("AddWaste.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
      @FXML
     public void btnExit(ActionEvent event) {
         //goes back to the home page

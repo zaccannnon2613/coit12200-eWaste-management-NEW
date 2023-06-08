@@ -8,7 +8,7 @@
 <AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ewastemanagement.FXMLDocumentController">
    <children>
       <Button fx:id="btnAddCustomer" layoutX="118.0" layoutY="117.0" mnemonicParsing="false" onAction="#btnAddCustomer" prefHeight="47.0" prefWidth="114.0" text="Add customer" />
-      <Button fx:id="btnSearch" layoutX="118.0" layoutY="396.0" mnemonicParsing="false" onAction="#btnSearch" prefHeight="47.0" prefWidth="114.0" text="Search" />
+      <Button fx:id="btnSearch" layoutX="118.0" layoutY="396.0" mnemonicParsing="false" onAction="#btnSearch" prefHeight="47.0" prefWidth="114.0" text="Search Customer" />
       <Button fx:id="btnUpdateCustomer" layoutX="118.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnUpdateCustomer" prefHeight="47.0" prefWidth="114.0" text="Update Customer" />
       <Button fx:id="btnAddBooking" layoutX="118.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnAddBooking" prefHeight="47.0" prefWidth="114.0" text="Add Booking" />
       <Button fx:id="btnUpdateBooking" layoutX="118.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnUpdateBooking" prefHeight="47.0" prefWidth="114.0" text="Update Booking" />
@@ -19,5 +19,7 @@
          </font>
       </Label>
       <Label layoutX="296.0" layoutY="510.0" text="Developed by Hughen Flint &amp; Zac Cannon" />
+      <Button fx:id="btnSearchBooking" layoutX="307.0" layoutY="117.0" mnemonicParsing="false" onAction="#btnSearchBooking" prefHeight="47.0" prefWidth="114.0" text="Search Booking" />
+      <Button fx:id="btnAddWaste" layoutX="307.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnAddWaste" prefHeight="47.0" prefWidth="114.0" text="Add Waste Details" />
    </children>
 </AnchorPane>

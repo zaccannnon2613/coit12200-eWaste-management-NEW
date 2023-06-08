@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  *
  * @author Zac
  */
-public class AddBookingController implements Initializable {
+public class AddWasteController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -35,30 +35,19 @@ public class AddBookingController implements Initializable {
     @FXML
     private Button btnSave;
     @FXML
-    private TextField txtBookingDate;
+    private TextField txtTypeWaste;
     @FXML
-    private TextField txtTimePickup;
+    private TextField txtItemDetails;
     @FXML
-    private TextField txtReqDate;
+    private TextField txtItemQuantity;
     @FXML
-    private TextField txtStrNo;
-    @FXML
-    private TextField txtStrName;
-    @FXML
-    private TextField txtSuburb;
-    @FXML
-    private TextField txtNotes;
-    @FXML
-    private TextField txtCustID;
-    @FXML
-    private TextField txtWasteID;
+    private TextField txtCustomerID;
     
-    BookingModel booking = new BookingModel();
-    List<Booking> result;
+    WasteModel waste = new WasteModel();
+    List<WasteDetails> result;
     int numOfEntries;
     int index;
-    Booking currentBooking;
-    
+    WasteDetails currentWaste;
     
     Stage stage;
     Parent root;
@@ -79,17 +68,12 @@ public class AddBookingController implements Initializable {
     
     @FXML
     public void btnSaveListener(ActionEvent event){
-        String bookingDate = txtBookingDate.getText();
-        String requestDate = txtReqDate.getText();
-        String timePickup = txtTimePickup.getText();
-        int streetNo = Integer.parseInt(txtStrNo.getText());
-        String streetName = txtStrName.getText();
-        String suburb = txtSuburb.getText();
-        String notes = txtNotes.getText();
-        int customerID = Integer.parseInt(txtCustID.getText());
-        int wasteID = Integer.parseInt(txtWasteID.getText());
+        String wasteType = txtTypeWaste.getText();
+        String itemDetails = txtItemDetails.getText();
+        int itemQuantity = Integer.parseInt(txtItemQuantity.getText());
+        int customerID = Integer.parseInt(txtCustomerID.getText());
         
-        int addToList = booking.addBooking(bookingDate, timePickup, requestDate, index, streetName, suburb, notes, numOfEntries, index);
+        int addToList = waste.addWaste(wasteType, itemDetails, itemDetails, customerID);
     }
     
     @Override
