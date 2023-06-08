@@ -35,6 +35,8 @@ public class AddWasteController implements Initializable {
     @FXML
     private Button btnSave;
     @FXML
+    private Button btnBooking;
+    @FXML
     private TextField txtTypeWaste;
     @FXML
     private TextField txtItemDetails;
@@ -74,6 +76,19 @@ public class AddWasteController implements Initializable {
         int customerID = Integer.parseInt(txtCustomerID.getText());
         
         int addToList = waste.addWaste(wasteType, itemDetails, itemDetails, customerID);
+    }
+     @FXML
+    public void btnAddBooking(ActionEvent event) {
+        //goes back to the home page
+        try {
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();//node is used to keep the window in the same place, can also alter height and width
+            root = FXMLLoader.load(getClass().getResource("AddBooking.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     @Override

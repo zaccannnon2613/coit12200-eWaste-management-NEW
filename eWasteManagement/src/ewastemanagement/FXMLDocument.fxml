@@ -10,8 +10,7 @@
       <Button fx:id="btnAddCustomer" layoutX="118.0" layoutY="117.0" mnemonicParsing="false" onAction="#btnAddCustomer" prefHeight="47.0" prefWidth="114.0" text="Add customer" />
       <Button fx:id="btnSearch" layoutX="118.0" layoutY="396.0" mnemonicParsing="false" onAction="#btnSearch" prefHeight="47.0" prefWidth="114.0" text="Search Customer" />
       <Button fx:id="btnUpdateCustomer" layoutX="118.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnUpdateCustomer" prefHeight="47.0" prefWidth="114.0" text="Update Customer" />
-      <Button fx:id="btnAddBooking" layoutX="118.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnAddBooking" prefHeight="47.0" prefWidth="114.0" text="Add Booking" />
-      <Button fx:id="btnUpdateBooking" layoutX="118.0" layoutY="327.0" mnemonicParsing="false" onAction="#btnUpdateBooking" prefHeight="47.0" prefWidth="114.0" text="Update Booking" />
+      <Button fx:id="btnAddBooking" layoutX="118.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnAddWaste" prefHeight="47.0" prefWidth="114.0" text="Add Booking" />
       <Button fx:id="btnExit" layoutX="634.0" layoutY="408.0" mnemonicParsing="false" onAction="#btnExit" prefHeight="47.0" prefWidth="94.0" text="Exit" />
       <Label layoutX="173.0" layoutY="1.0" prefHeight="77.0" prefWidth="643.0" text="eWaste Management System" textAlignment="CENTER">
          <font>
@@ -19,7 +18,6 @@
          </font>
       </Label>
       <Label layoutX="296.0" layoutY="510.0" text="Developed by Hughen Flint &amp; Zac Cannon" />
-      <Button fx:id="btnSearchBooking" layoutX="307.0" layoutY="117.0" mnemonicParsing="false" onAction="#btnSearchBooking" prefHeight="47.0" prefWidth="114.0" text="Search Booking" />
-      <Button fx:id="btnAddWaste" layoutX="307.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnAddWaste" prefHeight="47.0" prefWidth="114.0" text="Add Waste Details" />
+      <Button fx:id="btnSearchBooking" layoutX="116.0" layoutY="322.0" mnemonicParsing="false" onAction="#btnSearchBooking" prefHeight="47.0" prefWidth="114.0" text="Search Booking" />
    </children>
 </AnchorPane>
