@@ -16,6 +16,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -48,7 +49,7 @@ public class AddBookingController implements Initializable {
     @FXML
     private TextField txtSuburb;
     @FXML
-    private TextField txtNotes;
+    private TextArea txtNotes;
     @FXML
     private TextField txtCustID;
     @FXML

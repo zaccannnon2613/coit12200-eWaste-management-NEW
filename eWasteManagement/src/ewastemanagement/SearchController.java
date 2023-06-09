@@ -93,7 +93,7 @@ public class SearchController implements Initializable {
     @FXML
     public void btnSearchListener(ActionEvent event){
          //gets the text from search
-        String findCustomer = txtFName.getText();
+        String findCustomer = txtFNameSearch.getText();
         result = customer.getCustomerByName(findCustomer);//gets the name
 
         numOfEntries = result.size();//
@@ -108,7 +108,7 @@ public class SearchController implements Initializable {
     @FXML
     public void btnMobileSearchListener(ActionEvent event){
          //gets the text from search
-        String findCustomer = txtMobile.getText();
+        String findCustomer = txtMobileSearch.getText();
         result = customer.getCustomerByMobile(findCustomer);//gets the mobile
 
         numOfEntries = result.size();//
@@ -123,8 +123,8 @@ public class SearchController implements Initializable {
     @FXML
     public void btnAddressSearchListener(ActionEvent event){
          //gets the text from search
-        String findCustomer = txtStrName.getText();
-        String findCustomerStrNo = txtStrNo.getText();
+        String findCustomer = txtStrNameSearch.getText();
+        String findCustomerStrNo = txtStrNoSearch.getText();
         result = customer.getCustomerByAddress(findCustomerStrNo, findCustomer);//gets the street name and number
 
         numOfEntries = result.size();//

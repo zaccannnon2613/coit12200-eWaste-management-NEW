@@ -73,10 +73,10 @@ public class AddWasteController implements Initializable {
     public void btnSaveListener(ActionEvent event){//adds the text inputted into an onject of waste
         String wasteType = txtTypeWaste.getText();
         String itemDetails = txtItemDetails.getText();
-        int itemQuantity = Integer.parseInt(txtItemQuantity.getText());
+        String itemQuantity = txtItemQuantity.getText();
         int customerID = Integer.parseInt(txtCustomerID.getText());
         
-        int addToList = waste.addWaste(wasteType, itemDetails, itemDetails, customerID);
+        int addToList = waste.addWaste(wasteType, itemDetails, itemQuantity, customerID);
     }
      @FXML
     public void btnAddBooking(ActionEvent event) {

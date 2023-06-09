@@ -50,7 +50,7 @@ public class BookingModel {
                     + "on customer.customerID = bookings.customerID"
                     + "and customer.mobile = ?");
             insertBooking = connection.prepareStatement("INSERT INTO bookings "
-                    + "( bookingDate, timeOfPickup, requestDate, strNo, strName, suburb, notes, customerID, wasterID)"
+                    + "( bookingDate, timeOfPickup, requestDate, strNo, strName, suburb, notes, customerID, wasteID)"
                     + "values (?,?,?,?,?,?,?,?,?)");
 
         } catch (SQLException e) {
