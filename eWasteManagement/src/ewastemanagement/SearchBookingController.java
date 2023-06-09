@@ -6,6 +6,7 @@ package ewastemanagement;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,14 +15,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330,12195928
+ *Campus: Townsville
+ *File Description: manages the search for booking
  */
 public class SearchBookingController implements Initializable {
 
@@ -54,7 +58,16 @@ public class SearchBookingController implements Initializable {
     @FXML
     private TextField txtPickupTime;
     @FXML
-    private TextField txtNotes;
+    private TextArea txtNotes;
+    
+     //varaiables for searching and showing the data
+    BookingModel booking = new BookingModel();
+    List<Booking> result;
+    int numOfEntries;
+    int index;
+    Booking currentBooking;
+    
+    //initializes the stage and parent
     
     Stage stage;
     Parent root;
@@ -75,12 +88,70 @@ public class SearchBookingController implements Initializable {
     
     @FXML
     public void btnSearchListener(ActionEvent event){
-        
+        String findCustomer = txtFNameSearch.getText();
+        result = booking.getDetailsByName(findCustomer);//gets the name
+
+        numOfEntries = result.size();//
+        if (numOfEntries != 0) {
+            index = 0;
+            currentBooking = result.get(index);//customer becomes the record found
+            populateFields(currentBooking);
+        } else {
+            displayAlert();
+        }
+    }
+    @FXML
+    public void btnSearcgAddress(ActionEvent event){
+        String findCustomer = txtMobileSearch.getText();
+        result = booking.getDetailsByMobile(findCustomer);//gets the mobile
+
+        numOfEntries = result.size();//
+        if (numOfEntries != 0) {
+            index = 0;
+            currentBooking = result.get(index);//customer becomes the record found
+            populateFields(currentBooking);
+        } else {
+            displayAlert();
+        }
+    }
+    @FXML
+    public void btnSearchMobile(ActionEvent event){
+        String findCustomer = txtStrNameSearch.getText();
+        int findCustomerStrNo = Integer.parseInt(txtStrNoSearch.getText());
+        result = booking.getDetailsByAddress(findCustomer, findCustomerStrNo);//gets the street name and number
+
+        numOfEntries = result.size();//
+        if (numOfEntries != 0) {
+            index = 0;
+            currentBooking = result.get(index);//customer becomes the record found
+            populateFields(currentBooking);
+        } else {
+            displayAlert();
+        }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+     //makes and displays an alert
+    public void displayAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error");
+        alert.setContentText("Entry not found");
+        alert.show();
+    }
+
+    //gets the fields from the database and outputs into the text fields
+    private void populateFields(Booking b) {
+        txtStrNo.setText(""+ b.getStrNo());
+        txtStrName.setText("" + b.getStrName());
+        txtSuburb.setText("" + b.getSuburb());
+        txtDateBooked.setText("" + b.getBookingDate());
+        txtReqDate.setText("" + b.getRequestDate());
+        txtPickupTime.setText(""+ b.getTimeOfPickup());
+        txtNotes.setText("" + b.getNotes());
+    }
     
 }

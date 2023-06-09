@@ -17,13 +17,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330,12195928
+ *Campus: Townsville
+ *File Description: manages the search for customer
  */
 public class UpdateCustomerController implements Initializable {
 
@@ -49,6 +51,8 @@ public class UpdateCustomerController implements Initializable {
     private TextField txtMobile;
     @FXML
     private Button btnSearchAddress;
+    @FXML
+    private Label txtCustID;
     
     CustomerModel customer = new CustomerModel();
     List<Customer> result;
@@ -75,7 +79,12 @@ public class UpdateCustomerController implements Initializable {
     
     @FXML
     public void btnSaveListener(ActionEvent event){
-        
+        //gets text from the fields
+        String email = txtEmail.getText();
+        String mobile = txtMobile.getText();
+        int custID = Integer.parseInt(txtCustID.getText());
+        //adds them to the list for update customer
+        int addToList = customer.updateCustomer(custID, email, mobile);
     }
     
     @FXML
@@ -129,5 +138,7 @@ public class UpdateCustomerController implements Initializable {
     private void populateFields(Customer c) {
         txtMobile.setText("" + c.getMobile());
         txtEmail.setText("" + c.getEmail());
+        txtCustID.setText("" + c.getCustomerID());
     }
+    
 }

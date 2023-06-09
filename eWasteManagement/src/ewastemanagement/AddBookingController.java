@@ -19,17 +19,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: ,12195928
+ *Campus: Townsville
+ *File Description: Controls the homepage
  */
 public class AddBookingController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-    
+    //objects on the UI are initialized
     @FXML
     private Button btnBack;
     @FXML
@@ -52,14 +53,14 @@ public class AddBookingController implements Initializable {
     private TextField txtCustID;
     @FXML
     private TextField txtWasteID;
-    
+    //variables for showing and getting data
     BookingModel booking = new BookingModel();
     List<Booking> result;
     int numOfEntries;
     int index;
     Booking currentBooking;
     
-    
+    //parent and stage
     Stage stage;
     Parent root;
     
@@ -79,6 +80,7 @@ public class AddBookingController implements Initializable {
     
     @FXML
     public void btnSaveListener(ActionEvent event){
+        //gets the text from the input and stores in a variable
         String bookingDate = txtBookingDate.getText();
         String requestDate = txtReqDate.getText();
         String timePickup = txtTimePickup.getText();
@@ -89,7 +91,9 @@ public class AddBookingController implements Initializable {
         int customerID = Integer.parseInt(txtCustID.getText());
         int wasteID = Integer.parseInt(txtWasteID.getText());
         
-        int addToList = booking.addBooking(bookingDate, timePickup, requestDate, index, streetName, suburb, notes, numOfEntries, index);
+        
+        //adds the variables to the booking object list
+        int addToList = booking.addBooking(bookingDate, timePickup, requestDate, streetNo, streetName, suburb, notes, customerID, wasteID);
     }
     
     @Override

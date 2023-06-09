@@ -10,10 +10,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330 ,12195928
+ *Campus: Townsville
+ *File Description: the main, launches the program
  */
+
+//just the main
+
 public class EWasteManagement extends Application {
     
     @Override

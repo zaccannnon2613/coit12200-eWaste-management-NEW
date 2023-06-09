@@ -19,17 +19,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330,12195928
+ *Campus: Townsville
+ *File Description: Controls add waste page
  */
 public class AddWasteController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
-    
+    //objects in the UI are initialized
     @FXML
     private Button btnBack;
     @FXML
@@ -44,13 +45,13 @@ public class AddWasteController implements Initializable {
     private TextField txtItemQuantity;
     @FXML
     private TextField txtCustomerID;
-    
+    //varibles for adding and showing data
     WasteModel waste = new WasteModel();
     List<WasteDetails> result;
     int numOfEntries;
     int index;
     WasteDetails currentWaste;
-    
+    //parent and stage
     Stage stage;
     Parent root;
     
@@ -69,7 +70,7 @@ public class AddWasteController implements Initializable {
     }
     
     @FXML
-    public void btnSaveListener(ActionEvent event){
+    public void btnSaveListener(ActionEvent event){//adds the text inputted into an onject of waste
         String wasteType = txtTypeWaste.getText();
         String itemDetails = txtItemDetails.getText();
         int itemQuantity = Integer.parseInt(txtItemQuantity.getText());
@@ -79,7 +80,7 @@ public class AddWasteController implements Initializable {
     }
      @FXML
     public void btnAddBooking(ActionEvent event) {
-        //goes back to the home page
+        //goes to the add booking page
         try {
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();//node is used to keep the window in the same place, can also alter height and width
             root = FXMLLoader.load(getClass().getResource("AddBooking.fxml"));

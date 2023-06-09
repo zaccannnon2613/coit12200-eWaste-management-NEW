@@ -20,20 +20,26 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330,12195928
+ *Campus: Townsville
+ *File Description: manages the search for customer
  */
 public class SearchController implements Initializable {
 
     /**
      * Initializes the controller class.
      */
+    //objects in UI are initialized
     @FXML
     private Button btnBack;
     @FXML
     private Button btnSearch;
+    @FXML
+    private Button btnSearchMobile;
+    @FXML
+    private Button btnAddressSearch;
     @FXML
     private TextField txtFNameSearch;
     @FXML
@@ -59,13 +65,14 @@ public class SearchController implements Initializable {
     @FXML
     private TextField txtTripRem;
     
-    
+    //varaiables for searching and showing the data
     CustomerModel customer = new CustomerModel();
     List<Customer> result;
     int numOfEntries;
     int index;
     Customer currentCustomer;
     
+    //initializes the stage and parent
     Stage stage;
     Parent root;
     
@@ -88,6 +95,37 @@ public class SearchController implements Initializable {
          //gets the text from search
         String findCustomer = txtFName.getText();
         result = customer.getCustomerByName(findCustomer);//gets the name
+
+        numOfEntries = result.size();//
+        if (numOfEntries != 0) {
+            index = 0;
+            currentCustomer = result.get(index);//customer becomes the record found
+            populateFields(currentCustomer);
+        } else {
+            displayAlert();
+        }
+    }
+    @FXML
+    public void btnMobileSearchListener(ActionEvent event){
+         //gets the text from search
+        String findCustomer = txtMobile.getText();
+        result = customer.getCustomerByMobile(findCustomer);//gets the mobile
+
+        numOfEntries = result.size();//
+        if (numOfEntries != 0) {
+            index = 0;
+            currentCustomer = result.get(index);//customer becomes the record found
+            populateFields(currentCustomer);
+        } else {
+            displayAlert();
+        }
+    }
+    @FXML
+    public void btnAddressSearchListener(ActionEvent event){
+         //gets the text from search
+        String findCustomer = txtStrName.getText();
+        String findCustomerStrNo = txtStrNo.getText();
+        result = customer.getCustomerByAddress(findCustomerStrNo, findCustomer);//gets the street name and number
 
         numOfEntries = result.size();//
         if (numOfEntries != 0) {

@@ -4,11 +4,14 @@
  */
 package ewastemanagement;
 
-/**
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330 ,12195928
+ *Campus: Townsville
+ *File Description: customer object
  */
 public class Customer {
+    //variables are initialized
     private int customerID;
     private String firstName;
     private String lastName;
@@ -19,6 +22,7 @@ public class Customer {
     private String suburb;
     private int tipCounter;
 
+    //constructor and getters and setters
     public Customer(int customerID, String firstName, String lastName, String mobile, String email, int streetNum, String streetName, String suburb, int tipCounter) {
         this.customerID = customerID;
         this.firstName = firstName;
@@ -103,6 +107,7 @@ public class Customer {
         this.tipCounter = tipCounter;
     }
 
+    //to string method
     @Override
     public String toString() {
         return "Customer{" + "customerID=" + customerID + ", firstName=" +

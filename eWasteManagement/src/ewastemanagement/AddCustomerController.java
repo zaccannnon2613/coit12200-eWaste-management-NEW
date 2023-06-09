@@ -19,10 +19,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330 ,12195928
+ *Campus: Townsville
+ *File Description: Controls the add to customer page
  */
 public class AddCustomerController implements Initializable {
 
@@ -59,7 +60,7 @@ public class AddCustomerController implements Initializable {
         //goes back to the home page
         try {
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();//node is used to keep the window in the same place, can also alter height and width
-            root = FXMLLoader.load(getClass().getResource("Search.fxml"));
+            root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -68,7 +69,7 @@ public class AddCustomerController implements Initializable {
         }
     }
     
-    public void btnSaveListener(ActionEvent event){
+    public void btnSaveListener(ActionEvent event){//variables to store the text input are initialized
         String firstName = txtFirstName.getText();
         String lastName = txtLastName.getText();
         String mobile = txtMobile.getText();

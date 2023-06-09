@@ -4,17 +4,21 @@
  */
 package ewastemanagement;
 
-/**
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330,12195928
+ *Campus: Townsville
+ *File Description: waste details object
  */
 public class WasteDetails {
+    //variables are initialized
     private int wasteID;
     private String wasteType;
     private String itemDetails;
     private String itemQuantity;
     private int customerID;
 
+    //constructor and getters and setters
     public WasteDetails(int wasteID, String wasteType, String itemDetails, String itemQuantity, int customerID) {
         this.wasteID = wasteID;
         this.wasteType = wasteType;
@@ -63,6 +67,7 @@ public class WasteDetails {
         this.customerID = customerID;
     }
 
+    //to string method
     @Override
     public String toString() {
         return "WasteDetails{" + "wasteID=" + wasteID + ", wasteType=" + 

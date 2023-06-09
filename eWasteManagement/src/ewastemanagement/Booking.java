@@ -4,27 +4,35 @@
  */
 package ewastemanagement;
 
-/**
- *
- * @author Zac
+/*
+ *Student names: Hughen Flint, Zac Cannon
+ *Student ID: 12177330,12195928
+ *Campus: Townsville
+ *File Description: booking object
  */
 public class Booking {
+    //variables are initialized
     private int bookingID;
     private String bookingDate;
     private String timeOfPickup;
     private String requestDate;
-    private String locationDetails;
+    private int strNo;
+    private String strName;
     private String notes;
+    private String suburb;
     private int customerID;
     private int wasteID;
 
-    public Booking(int bookingID, String bookingDate, String timeOfPickup, String requestDate, String locationDetails, String notes, int customerID, int wasteID) {
+    //constructor and getters and setters
+    public Booking(int bookingID, String bookingDate, String timeOfPickup, String requestDate, int strNo, String strName, String notes, String suburb, int customerID, int wasteID) {
         this.bookingID = bookingID;
         this.bookingDate = bookingDate;
         this.timeOfPickup = timeOfPickup;
         this.requestDate = requestDate;
-        this.locationDetails = locationDetails;
+        this.strNo = strNo;
+        this.strName = strName;
         this.notes = notes;
+        this.suburb = suburb;
         this.customerID = customerID;
         this.wasteID = wasteID;
     }
@@ -60,13 +68,20 @@ public class Booking {
     public void setRequestDate(String requestDate) {
         this.requestDate = requestDate;
     }
-
-    public String getLocationDetails() {
-        return locationDetails;
+    
+    public int getStrNo(){
+        return strNo;
+    }
+    public void setStrNo(int strNo){
+        this.strNo = strNo;
+    }
+    
+    public String getStrName() {
+        return strName;
     }
 
-    public void setLocationDetails(String locationDetails) {
-        this.locationDetails = locationDetails;
+    public void setStrName(String strName) {
+        this.strName = strName;
     }
 
     public String getNotes() {
@@ -75,6 +90,13 @@ public class Booking {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+    public String getSuburb() {
+        return suburb;
+    }
+
+    public void setSuburb(String suburb) {
+        this.suburb = suburb;
     }
 
     public int getCustomerID() {
@@ -93,12 +115,13 @@ public class Booking {
         this.wasteID = wasteID;
     }
 
+    //to string method
     @Override
     public String toString() {
         return "Booking{" + "bookingID=" + bookingID + ", bookingDate=" + 
                 bookingDate + ", timeOfPickup=" + timeOfPickup + 
-                ", requestDate=" + requestDate + ", locationDetails=" + 
-                locationDetails + ", notes=" + notes + ", customerID=" + 
+                ", requestDate=" + requestDate + ", street number=" + strNo +
+                ", street name=" + strName + ", notes=" + notes + ", suburb=" +suburb + ", customerID=" + 
                 customerID + ", wasteID=" + wasteID + '}';
     }
     

@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="816.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="ewastemanagement.SearchController">
+<AnchorPane id="AnchorPane" prefHeight="553.0" prefWidth="816.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ewastemanagement.SearchController">
    <children>
       <Button fx:id="btnBack" layoutX="620.0" layoutY="421.0" mnemonicParsing="false" onAction="#btnBackListener" prefHeight="36.0" prefWidth="61.0" text="Back" />
       <Label layoutX="273.0" layoutY="14.0" text="Customer Search">
@@ -25,7 +24,7 @@
       <Label layoutX="154.0" layoutY="100.0" text="First Name" />
       <Label layoutX="164.0" layoutY="180.0" text="Mobile" />
       <TextField fx:id="txtMobileSearch" layoutX="222.0" layoutY="176.0" />
-      <Button fx:id="btnSearch" layoutX="420.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnSearchListener" prefHeight="36.0" prefWidth="67.0" text="Search" />
+      <Button fx:id="btnSearch" layoutX="412.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnSearchListener" prefHeight="36.0" prefWidth="94.0" text="Search Name" />
       <Label layoutX="150.0" layoutY="287.0" text="First Name" />
       <TextField fx:id="txtFName" layoutX="209.0" layoutY="283.0" />
       <Label layoutX="380.0" layoutY="287.0" text="Last Name" />
@@ -42,5 +41,7 @@
       <TextField fx:id="txtEmail" layoutX="446.0" layoutY="363.0" />
       <Label layoutX="239.0" layoutY="413.0" text="Trips Remaining" />
       <TextField fx:id="txtTripRem" layoutX="328.0" layoutY="409.0" prefHeight="25.0" prefWidth="61.0" />
+      <Button fx:id="btnAddressSearch" layoutX="517.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnAddressSearchListener" prefHeight="36.0" prefWidth="101.0" text="Search Address" />
+      <Button fx:id="btnSearchMobile" layoutX="634.0" layoutY="201.0" mnemonicParsing="false" onAction="#btnMobileSearchListener" prefHeight="36.0" prefWidth="94.0" text="Search Mobile" />
    </children>
 </AnchorPane>
