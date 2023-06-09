@@ -59,11 +59,11 @@ public class AddBookingController implements Initializable {
     int numOfEntries;
     int index;
     Booking currentBooking;
-    
+
     //parent and stage
     Stage stage;
     Parent root;
-    
+
     @FXML
     public void btnBackListener(ActionEvent event) {
         //goes back to the home page
@@ -77,9 +77,9 @@ public class AddBookingController implements Initializable {
             e.printStackTrace();
         }
     }
-    
+
     @FXML
-    public void btnSaveListener(ActionEvent event){
+    public void btnSaveListener(ActionEvent event) {
         //gets the text from the input and stores in a variable
         String bookingDate = txtBookingDate.getText();
         String requestDate = txtReqDate.getText();
@@ -92,13 +92,16 @@ public class AddBookingController implements Initializable {
         int wasteID = Integer.parseInt(txtWasteID.getText());
         
         
+       
+
         //adds the variables to the booking object list
         int addToList = booking.addBooking(bookingDate, timePickup, requestDate, streetNo, streetName, suburb, notes, customerID, wasteID);
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+        
+    }
+
 }
